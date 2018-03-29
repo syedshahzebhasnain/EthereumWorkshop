@@ -22,6 +22,6 @@ contract playGround {
     }
 
     function concatStrings(string firstName, string lastName) public pure returns (string) {
-        return firstName.toSlice().concat(lastName.toSlice())
+        return firstName.toSlice().concat(lastName.toSlice());
     }
 }
