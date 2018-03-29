@@ -1,5 +1,4 @@
 pragma solidity ^0.4.0;
-import "github.com/Arachnid/solidity-stringutils/strings.sol";
 
 contract playGround {
     

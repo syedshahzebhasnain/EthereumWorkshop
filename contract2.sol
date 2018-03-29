@@ -1,15 +1,11 @@
 pragma solidity ^0.4.0;
 
-import "github.com/Arachnid/solidity-stringutils/strings.sol";
-
-
 contract playGround {
-    using strings for *;
     uint256[] arrayList;
-
+    event itemEvent
     function inputToList( uint256 num1) public {
         arrayList.push(num1);
-        
+        emit itemEvent(num1);
     }
     
     function mutliplyList() public view returns(uint256){
