@@ -3,6 +3,8 @@ import "github.com/Arachnid/solidity-stringutils/strings.sol";
 
 contract playGround {
     
+    using strings for *;
+
     uint128 number1 = 0;
     uint128 number2 = 0;
     
@@ -17,5 +19,9 @@ contract playGround {
     
     function sumInternalValues () public view returns (uint128) {  
         return number1 + number2; 
+    }
+
+    function concatStrings(string firstName, string lastName) public pure returns (string) {
+        return firstName.toSlice().concat(lastName.toSlice())
     }
 }
