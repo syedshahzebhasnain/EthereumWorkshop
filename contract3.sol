@@ -16,10 +16,13 @@ contract playGround {
         uint256 GPA;
     }
     
-    student Abhinav;
+    student generic;
     
-    function setGPA( string firstName, string lastName, uint256 GPA) public view returns (string) {
+    function setGPA( string firstName, string lastName, uint256 GPA) public returns (string) {
         if(owner == msg.sender) {
+          generic.firstName = firstName;
+          generic.lastName = lastName;
+          generic.GPA = GPA;
             return "You can add this";
         } else {
             return "Nope, you cant";
