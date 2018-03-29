@@ -1,9 +1,6 @@
 pragma solidity ^0.4.0;
 
 contract playGround {
-    
-    using strings for *;
-
     uint128 number1 = 0;
     uint128 number2 = 0;
     
@@ -20,7 +17,16 @@ contract playGround {
         return number1 + number2; 
     }
 
-    function concatStrings(string firstName, string lastName) public pure returns (string) {
-        return firstName.toSlice().concat(lastName.toSlice());
+function concatenate(string first, string second) view public returns (string concat) {
+        var lFirst = bytes(first).length;
+        var lSecond = bytes(second).length;
+        var concatLength=lFirst+lSecond;
+        bytes memory concatArray = new bytes(concatLength);
+        for(uint8 i;i<lFirst;i++)
+            concatArray[i]= bytes(first)[i];
+        for(uint8 j;j<lSecond;j++)
+            concatArray[lFirst+j]= bytes(second)[j];
+        return string(concatArray);    
     }
+
 }

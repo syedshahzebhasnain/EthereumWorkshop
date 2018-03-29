@@ -2,7 +2,8 @@ pragma solidity ^0.4.0;
 
 contract playGround {
     uint256[] arrayList;
-    event itemEvent
+    event itemEvent(uint256 num);
+    
     function inputToList( uint256 num1) public {
         arrayList.push(num1);
         emit itemEvent(num1);
